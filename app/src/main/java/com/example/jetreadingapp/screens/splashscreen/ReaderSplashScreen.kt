@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.jetreadingapp.components.ReaderLogo
 import com.example.jetreadingapp.navigation.ReaderScreens
-import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.delay
 
 
@@ -43,11 +42,14 @@ fun ReaderSplashScreen(navController: NavController = NavController(context = Lo
         }))
         delay(1500L)
 
-        if(FirebaseAuth.getInstance().currentUser?.email.isNullOrEmpty()){
-            navController.navigate(ReaderScreens.ReaderLoginScreen.name)
-        }else{
-            navController.navigate(ReaderScreens.ReaderHomeScreen.name)
-        }
+//        if(FirebaseAuth.getInstance().currentUser?.email.isNullOrEmpty()){
+//            navController.navigate(ReaderScreens.ReaderLoginScreen.name)
+//        }
+////        else{
+////            navController.navigate(ReaderScreens.ReaderHomeScreen.name)
+////        }
+
+        navController.navigate(ReaderScreens.ReaderLoginScreen.name)
 
     }
     Surface(modifier = Modifier
